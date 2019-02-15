@@ -39,6 +39,7 @@ namespace Timer
     [ProvideMenuResource("Menus.ctmenu", 1)]
     [Guid(CommandOnePackage.PackageGuidString)]
     [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "pkgdef, VS and vsixmanifest are valid VS terms")]
+    [ProvideAutoLoad(VSConstants.UICONTEXT.NoSolution_string)]
     public sealed class CommandOnePackage : AsyncPackage, IVsSolutionEvents
     {
         /// <summary>
