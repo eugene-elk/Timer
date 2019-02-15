@@ -31,13 +31,25 @@
     group; your package should define its own command set in order to avoid collisions
     with command ids defined by other packages. -->
 
+
+    <Menus>
+      <Menu guid="guidCommandOnePackageCmdSet" id="TopLevelMenu" priority="0x700" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
+        <Strings>
+          <ButtonText>CommandOne</ButtonText>
+          <CommandName>Work Timer Info</CommandName>
+        </Strings>
+      </Menu>
+    </Menus>
+
+
     <!-- In this section you can define new menu groups. A menu group is a container for
          other menus or buttons (commands); from a visual point of view you can see the
          group as the part of a menu contained between two lines. The parent of a group
          must be a menu. -->
     <Groups>
       <Group guid="guidCommandOnePackageCmdSet" id="MyMenuGroup" priority="0x0600">
-        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+        <Parent guid="guidCommandOnePackageCmdSet" id="TopLevelMenu" />
       </Group>
     </Groups>
 
@@ -56,7 +68,7 @@
         <Parent guid="guidCommandOnePackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Invoke CommandOne</ButtonText>
+          <ButtonText>Open Timer Info</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -80,6 +92,8 @@
     <GuidSymbol name="guidCommandOnePackageCmdSet" value="{1711a0fd-ab87-4bb8-8c0a-6e5a4e9d7bce}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
       <IDSymbol name="CommandOneId" value="0x0100" />
+      <IDSymbol name="Toolbar" value="0x1000" />
+      <IDSymbol name="TopLevelMenu" value="0x1021" />
     </GuidSymbol>
 
     <GuidSymbol name="guidImages" value="{931bd965-f27d-4d40-9c96-59df1c9baf88}" >
