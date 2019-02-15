@@ -78,6 +78,7 @@ namespace Timer
             IVsSolution solution = GetService(typeof(SVsSolution)) as IVsSolution;
             uint cookie = 0;
             solution.AdviseSolutionEvents(this, out cookie);
+            await CommandTwo.InitializeAsync(this);
         }
 
         public int OnAfterOpenProject(IVsHierarchy pHierarchy, int fAdded)

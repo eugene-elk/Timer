@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="CommandOne.cs" />
     <Compile Include="CommandOnePackage.cs" />
+    <Compile Include="CommandTwo.cs" />
     <Compile Include="GeneralSettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -82,6 +83,7 @@
     <Content Include="index.html" />
     <Content Include="Resources\CommandOne.png" />
     <Content Include="Resources\CommandOnePackage.ico" />
+    <Content Include="Resources\CommandTwo.png" />
     <Content Include="stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
