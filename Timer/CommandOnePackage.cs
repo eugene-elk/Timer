@@ -83,61 +83,64 @@ namespace Timer
 
         public int OnAfterOpenProject(IVsHierarchy pHierarchy, int fAdded)
         {
-            MessageBox.Show("OnAfterOpenProject");
+            // MessageBox.Show("OnAfterOpenProject");
             return VSConstants.S_OK;
         }
 
         public int OnQueryCloseProject(IVsHierarchy pHierarchy, int fRemoving, ref int pfCancel)
         {
-            MessageBox.Show("OnQueryCloseProject");
+            // MessageBox.Show("OnQueryCloseProject");
             return VSConstants.S_OK;
         }
 
         public int OnBeforeCloseProject(IVsHierarchy pHierarchy, int fRemoved)
         {
-            MessageBox.Show("OnBeforeCloseProject");
+            // MessageBox.Show("OnBeforeCloseProject");
             return VSConstants.S_OK;
         }
 
         public int OnAfterLoadProject(IVsHierarchy pStubHierarchy, IVsHierarchy pRealHierarchy)
         {
-            MessageBox.Show("OnAfterLoadProject");
+            // MessageBox.Show("OnAfterLoadProject");
             return VSConstants.S_OK;
         }
 
         public int OnQueryUnloadProject(IVsHierarchy pRealHierarchy, ref int pfCancel)
         {
-            MessageBox.Show("OnQueryUnloadProject");
+            // MessageBox.Show("OnQueryUnloadProject");
             return VSConstants.S_OK;
         }
 
         public int OnBeforeUnloadProject(IVsHierarchy pRealHierarchy, IVsHierarchy pStubHierarchy)
         {
-            MessageBox.Show("OnBeforeUnloadProject");
+            // MessageBox.Show("OnBeforeUnloadProject");
             return VSConstants.S_OK;
         }
 
         public int OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
         {
-            MessageBox.Show("OnAfterOpenSolution");
+            GeneralSettings.Default.startTime = DateTime.Now;
+            // MessageBox.Show("OnAfterOpenSolution " + GeneralSettings.Default.startTime);
             return VSConstants.S_OK;
         }
 
         public int OnQueryCloseSolution(object pUnkReserved, ref int pfCancel)
         {
-            MessageBox.Show("OnQueryCloseSolution");
+            // MessageBox.Show("OnQueryCloseSolution");
             return VSConstants.S_OK;
         }
 
         public int OnBeforeCloseSolution(object pUnkReserved)
         {
-            MessageBox.Show("OnBeforeCloseSolution");
+            GeneralSettings.Default.nowTime = DateTime.Now;
+            TimeSpan difference = GeneralSettings.Default.nowTime.Subtract(GeneralSettings.Default.startTime);
+            MessageBox.Show("Время работы над проектом составило " + difference);
             return VSConstants.S_OK;
         }
 
         public int OnAfterCloseSolution(object pUnkReserved)
         {
-            MessageBox.Show("OnAfterCloseSolution");
+            // MessageBox.Show("OnAfterCloseSolution");
             return VSConstants.S_OK;
         }
 

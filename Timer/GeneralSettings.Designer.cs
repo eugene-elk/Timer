@@ -22,5 +22,27 @@ namespace Timer {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime startTime {
+            get {
+                return ((global::System.DateTime)(this["startTime"]));
+            }
+            set {
+                this["startTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime nowTime {
+            get {
+                return ((global::System.DateTime)(this["nowTime"]));
+            }
+            set {
+                this["nowTime"] = value;
+            }
+        }
     }
 }
