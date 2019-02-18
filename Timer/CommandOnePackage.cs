@@ -13,7 +13,6 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using Task = System.Threading.Tasks.Task;
 using System.Windows;
-using System.Windows.Forms;
 
 namespace Timer
 {
