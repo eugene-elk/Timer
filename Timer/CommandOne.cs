@@ -93,9 +93,8 @@ namespace Timer
             string title = "CommandOne";
 
             MainToolbox win = new MainToolbox();
-            //Show - продолжет выполнение кода
-            //ShowDialog - ждёт пока юзер не закроет окно
             win.ShowDialog();
+            // win.UpdateLayout();
 
             // Show a message box to prove we were here
             VsShellUtilities.ShowMessageBox(

@@ -13,6 +13,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using Task = System.Threading.Tasks.Task;
 using System.Windows;
+using EnvDTE;
 
 namespace Timer
 {
@@ -119,6 +120,7 @@ namespace Timer
         public int OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
         {
             GeneralSettings.Default.startTime = DateTime.Now;
+            // string name = SolutionContext.ProjectName;
             // MessageBox.Show("OnAfterOpenSolution " + GeneralSettings.Default.startTime);
             return VSConstants.S_OK;
         }
