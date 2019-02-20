@@ -27,16 +27,15 @@ namespace Timer
 
         private void update_time_in_text()
         {
-            string result = "";
-            result += session_length();
+            string result = session_length();
             textSessionLenght.Text = result;
         }
 
-        private TimeSpan session_length()
+        private string session_length()
         {
             GeneralSettings.Default.nowTime = DateTime.Now;
-            TimeSpan difference = GeneralSettings.Default.nowTime.Subtract(GeneralSettings.Default.startTime);
-            return difference;
+            TimeSpan dif = GeneralSettings.Default.nowTime.Subtract(GeneralSettings.Default.startTime);
+            return String.Format("{0:00}:{1:00}:{2:00}", dif.TotalHours, dif.Minutes, dif.Seconds);
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

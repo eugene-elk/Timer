@@ -92,6 +92,9 @@ namespace Timer
             string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
             string title = "CommandTwo";
 
+            StatisticsToolbox win = new StatisticsToolbox();
+            win.Show();
+
             // Show a message box to prove we were here
             VsShellUtilities.ShowMessageBox(
                 this.package,

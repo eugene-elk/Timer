@@ -89,11 +89,9 @@ namespace Timer
         private void Execute(object sender, EventArgs e)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-            string message = string.Format(CultureInfo.CurrentCulture, "Inside {0}.MenuItemCallback()", this.GetType().FullName);
-            string title = "CommandOne";
 
             MainToolbox win = new MainToolbox();
-            win.ShowDialog();
+            win.Show();
         }
     }
 }
