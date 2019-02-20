@@ -18,13 +18,18 @@ namespace Timer
         {
             InitializeComponent();
 
-            string result = "";
-            result += session_length();
-            textSessionLenght.Text = result;
+            update_time_in_text();
 
             m_timer.Interval = TimeSpan.FromSeconds(1);
             m_timer.Tick += TimerOnTick;
             m_timer.Start();
+        }
+
+        private void update_time_in_text()
+        {
+            string result = "";
+            result += session_length();
+            textSessionLenght.Text = result;
         }
 
         private TimeSpan session_length()
@@ -34,19 +39,15 @@ namespace Timer
             return difference;
         }
 
-        private void Upd_Click(object sender, RoutedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
-            string result = "";
-            result += session_length();
-            textSessionLenght.Text = result;
+            Close();
+            // update_time_in_text();
         }
 
         private void TimerOnTick(object sender, EventArgs eventArgs)
         {
-            // m_timer.Stop();
-            string result = "";
-            result += session_length();
-            textSessionLenght.Text = result;
+            update_time_in_text();
             textSessionLenght.UpdateLayout();
         }
     }

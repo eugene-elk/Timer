@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d"
-             Title="Текущая сессия" Height="150" Width="400" ResizeMode="NoResize">
-    <Grid>
-        <Button Name="Update" Content="Update" Height="21" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="93" Click="Upd_Click" />
-        <TextBlock x:Name="textSessionLenght" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="19" Width="108"/>
+             Title="Текущая сессия" Height="141" Width="400" ResizeMode="NoResize">
+    <Grid Height="104" VerticalAlignment="Top">
+        <Button Name="Close" Content="Закрыть" Height="21" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Width="114" Click="Close_Click" />
+        <TextBlock x:Name="textSessionLenght" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="43" Width="198" FontSize="35"/>
     </Grid>
 </Window>
