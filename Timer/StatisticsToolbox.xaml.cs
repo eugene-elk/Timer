@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System;
+using System.IO;
 
 namespace Timer
 {
@@ -14,8 +15,14 @@ namespace Timer
         public StatisticsToolbox()
         {
             InitializeComponent();
-            string flex = "loveflex";
-            sessionsList.Items.Add(flex);
+
+            StreamReader sr = new StreamReader("D:\\prog\\sessions.txt");
+            while(!sr.EndOfStream)
+            {
+                string readedLine = sr.ReadLine();
+                sessionsList.Items.Add(readedLine);
+            }
+            sr.Close();
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

@@ -90,7 +90,6 @@ namespace Timer
         private void Execute(object sender, EventArgs e)
         {
             ThreadHelper.ThrowIfNotOnUIThread();
-
             try
             {
                 MainToolbox win = new MainToolbox();

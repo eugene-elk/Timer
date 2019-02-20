@@ -121,7 +121,6 @@ namespace Timer
         {
             GeneralSettings.Default.startTime = DateTime.Now;
             // string name = SolutionContext.ProjectName;
-            // MessageBox.Show("OnAfterOpenSolution " + GeneralSettings.Default.startTime);
             return VSConstants.S_OK;
         }
 
@@ -133,9 +132,8 @@ namespace Timer
 
         public int OnBeforeCloseSolution(object pUnkReserved)
         {
-            GeneralSettings.Default.nowTime = DateTime.Now;
-            TimeSpan difference = GeneralSettings.Default.nowTime.Subtract(GeneralSettings.Default.startTime);
-            MessageBox.Show("Время работы над проектом составило " + difference);
+            CloseToolbox win = new CloseToolbox();
+            win.ShowDialog();
             return VSConstants.S_OK;
         }
 

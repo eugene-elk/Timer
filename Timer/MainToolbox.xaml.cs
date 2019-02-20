@@ -31,7 +31,7 @@ namespace Timer
             textSessionLenght.Text = result;
         }
 
-        private string session_length()
+        public static string session_length()
         {
             GeneralSettings.Default.nowTime = DateTime.Now;
             TimeSpan dif = GeneralSettings.Default.nowTime.Subtract(GeneralSettings.Default.startTime);
@@ -41,7 +41,6 @@ namespace Timer
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Close();
-            // update_time_in_text();
         }
 
         private void TimerOnTick(object sender, EventArgs eventArgs)

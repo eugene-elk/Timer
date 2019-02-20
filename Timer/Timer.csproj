@@ -54,6 +54,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CloseToolbox.xaml.cs">
+      <DependentUpon>CloseToolbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CommandOne.cs" />
     <Compile Include="CommandOnePackage.cs" />
     <Compile Include="CommandTwo.cs" />
@@ -199,6 +202,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="CloseToolbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainToolbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
