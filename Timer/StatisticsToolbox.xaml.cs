@@ -15,14 +15,20 @@ namespace Timer
         public StatisticsToolbox()
         {
             InitializeComponent();
-
-            StreamReader sr = new StreamReader("D:\\prog\\sessions.txt");
-            while(!sr.EndOfStream)
+            try
             {
-                string readedLine = sr.ReadLine();
-                sessionsList.Items.Add(readedLine);
+                StreamReader sr = new StreamReader(GeneralSettings.Default.path);
+                while (!sr.EndOfStream)
+                {
+                    string readedLine = sr.ReadLine();
+                    sessionsList.Items.Add(readedLine);
+                }
+                sr.Close();
             }
-            sr.Close();
+            catch
+            {
+                MessageBox.Show("Статистика пока пуста");
+            }
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)

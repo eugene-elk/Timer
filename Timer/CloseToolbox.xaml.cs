@@ -18,7 +18,7 @@ namespace Timer
 
         private void Btn_Save_Click(object sender, RoutedEventArgs e)
         {
-            StreamWriter sw = new StreamWriter("D:\\prog\\sessions.txt", true, System.Text.Encoding.Default);
+            StreamWriter sw = new StreamWriter(GeneralSettings.Default.path, true, System.Text.Encoding.Default);
 
             string name = textBoxName.Text;
             string date = GeneralSettings.Default.startTime.ToString("d");

@@ -13,7 +13,7 @@ using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.Win32;
 using Task = System.Threading.Tasks.Task;
 using System.Windows;
-using EnvDTE;
+using System.IO;
 
 namespace Timer
 {
@@ -117,16 +117,28 @@ namespace Timer
             return VSConstants.S_OK;
         }
 
-        public int OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
-        {
-            GeneralSettings.Default.startTime = DateTime.Now;
-            // string name = SolutionContext.ProjectName;
-            return VSConstants.S_OK;
-        }
-
         public int OnQueryCloseSolution(object pUnkReserved, ref int pfCancel)
         {
             // MessageBox.Show("OnQueryCloseSolution");
+            return VSConstants.S_OK;
+        }
+
+        public int OnAfterCloseSolution(object pUnkReserved)
+        {
+            // MessageBox.Show("OnAfterCloseSolution");
+            return VSConstants.S_OK;
+        }
+
+        public int OnAfterOpenSolution(object pUnkReserved, int fNewSolution)
+        {
+            FileInfo fileInf = new FileInfo(GeneralSettings.Default.path);
+            if (!fileInf.Exists)
+            {
+                fileInf.Create();
+            }
+
+            GeneralSettings.Default.startTime = DateTime.Now;
+            // string name = SolutionContext.ProjectName;
             return VSConstants.S_OK;
         }
 
@@ -134,12 +146,6 @@ namespace Timer
         {
             CloseToolbox win = new CloseToolbox();
             win.ShowDialog();
-            return VSConstants.S_OK;
-        }
-
-        public int OnAfterCloseSolution(object pUnkReserved)
-        {
-            // MessageBox.Show("OnAfterCloseSolution");
             return VSConstants.S_OK;
         }
 

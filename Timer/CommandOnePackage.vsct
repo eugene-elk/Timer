@@ -37,7 +37,7 @@
         <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_TOOLSADDINS" />
         <Strings>
           <ButtonText>CommandOne</ButtonText>
-          <CommandName>Work Timer Info</CommandName>
+          <CommandName>Таймер</CommandName>
         </Strings>
       </Menu>
     </Menus>
@@ -67,14 +67,14 @@
       <Button guid="guidCommandOnePackageCmdSet" id="CommandOneId" priority="0x0100" type="Button">
         <Parent guid="guidCommandOnePackageCmdSet" id="MyMenuGroup" />
         <Strings>
-          <ButtonText>Open Timer Info</ButtonText>
+          <ButtonText>Текущий сеанс</ButtonText>
         </Strings>
       </Button>
 
       <Button guid="guidCommandOnePackageCmdSet" id="CommandTwoId" priority="0x0101" type="Button">
         <Parent guid="guidCommandOnePackageCmdSet" id="MyMenuGroup" />
         <Strings>
-          <ButtonText>Open Settings</ButtonText>
+          <ButtonText>Статистика</ButtonText>
         </Strings>
       </Button>
      
