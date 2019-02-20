@@ -14,11 +14,13 @@ namespace Timer
         public StatisticsToolbox()
         {
             InitializeComponent();
+            string flex = "loveflex";
+            sessionsList.Items.Add(flex);
         }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(string.Format(CultureInfo.CurrentUICulture, "We are inside {0}.Button1_Click()", this.ToString()));
+            Close();
         }
     }
 }

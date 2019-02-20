@@ -73,12 +73,12 @@ namespace Timer
             // Do any initialization that requires the UI thread after switching to the UI thread.
             await this.JoinableTaskFactory.SwitchToMainThreadAsync(cancellationToken);
             await CommandOne.InitializeAsync(this);
+            await CommandTwo.InitializeAsync(this);
 
             // Creating copy of IVsSolution
             IVsSolution solution = GetService(typeof(SVsSolution)) as IVsSolution;
             uint cookie = 0;
             solution.AdviseSolutionEvents(this, out cookie);
-            await CommandTwo.InitializeAsync(this);
         }
 
         public int OnAfterOpenProject(IVsHierarchy pHierarchy, int fAdded)

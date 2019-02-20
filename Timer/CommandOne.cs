@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.VisualStudio.Shell;
 using Microsoft.VisualStudio.Shell.Interop;
 using Task = System.Threading.Tasks.Task;
+using System.Windows;
 
 namespace Timer
 {
@@ -90,8 +91,15 @@ namespace Timer
         {
             ThreadHelper.ThrowIfNotOnUIThread();
 
-            MainToolbox win = new MainToolbox();
-            win.Show();
+            try
+            {
+                MainToolbox win = new MainToolbox();
+                win.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Проект не открыт");
+            }
         }
     }
 }
